@@ -9,18 +9,21 @@ import sys
 #  k8s.gcr.io/xxx:yyy => gcr.io/google-containers/xxx:yyy -> gcr.azk8s.cn/google-containers/xxx:yyy, for example k8s.gcr.io/kube-apiserver:v1.14.1
 #  quay.io/xxx/yyy:zzz -> quay.azk8s.cn/xxx/yyy:zzz, for example quay.io/coreos/flannel:v0.10.0-amd64
 
+# azk8s.cn is only allowed for azure china ip now
+# use mirrors.ustc.edu.cn instead
+
 converts = [
     {
         'prefix': 'gcr.io',
-        'replace': lambda x: x.replace('gcr.io', 'gcr.azk8s.cn'),
+        'replace': lambda x: x.replace('gcr.io', 'gcr.mirrors.ustc.edu.cn'),
     },
     {
         'prefix': 'k8s.gcr.io',
-        'replace': lambda x: x.replace('k8s.gcr.io', 'gcr.azk8s.cn/google-containers'),
+        'replace': lambda x: x.replace('k8s.gcr.io', 'gcr.mirrors.ustc.edu.cn/google-containers'),
     },
     {
         'prefix': 'quay.io',
-        'replace': lambda x: x.replace('quay.io', 'quay.azk8s.cn'),
+        'replace': lambda x: x.replace('quay.io', 'quay.mirrors.ustc.edu.cn'),
     }
 ]
 
