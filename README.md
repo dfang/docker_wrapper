@@ -4,8 +4,8 @@ An wrapper of docker for pulling image from gcr.io/k8s.gcr.io/quay.io
 # install
 
 ```bash
-git clone https://github.com/silenceshell/docker_wrapper.git
-sudo cp docker_wrapper/docker_wrapper.py /usr/local/bin/docker_wrapper
+git clone https://github.com/dfang/docker_wrapper.git
+sudo cp docker_wrapper/docker-wrapper.py /usr/local/bin/docker-wrapper
 ```
 
 # usage
